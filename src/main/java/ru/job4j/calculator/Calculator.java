@@ -1,7 +1,6 @@
 package ru.job4j.calculator;
 
 public class Calculator {
-    @SuppressWarnings("checkstyle:WhitespaceAround")
     public static void main(String[] args) {
         int six = 6;
         int four = 4;
