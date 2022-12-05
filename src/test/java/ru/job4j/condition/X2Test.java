@@ -50,7 +50,7 @@ public class X2Test {
     }
 
     @Test
-    public void whenA1B1C1X0Then2() {
+    public void whenA1B1C1X0Then1() {
         int a = 1;
         int b = 1;
         int c = 1;
