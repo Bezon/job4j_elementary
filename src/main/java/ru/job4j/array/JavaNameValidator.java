@@ -8,17 +8,11 @@ public class JavaNameValidator {
         boolean valid = !name.isEmpty();
         for (int i = 0; i < name.length(); i++) {
             int code = name.codePointAt(i);
-            if (i == 0 && isUpperCase(code)) {
+            if (i == 0 && (isUpperCase(code) || isDigit(code))) {
                 valid = false;
                 break;
             }
-            if (i == 0 && isDigit(code)) {
-                valid = false;
-                break;
-            }
-            if (isSpecialSymbol(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code) || isDigit(code)) {
-                valid = true;
-            } else {
+            if (!(isSpecialSymbol(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code) || isDigit(code))) {
                 valid = false;
                 break;
             }
