@@ -2,8 +2,8 @@ package ru.job4j.condition;
 
 public class Point {
 
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
     private int z;
 
     public Point(int first, int second) {
