@@ -1,16 +1,18 @@
 package ru.job4j.array;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class SimpleStringEncoderTest {
     @Test
-    void whenOnlyOne(){
+    void whenOnlyOne() {
         String input = "a";
         String expected = "a";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
     void whenDoubleA() {
         String input = "aa";
@@ -18,8 +20,9 @@ class SimpleStringEncoderTest {
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
-    void whenStringaaabbcThenResulta3b2c(){
+    void whenStringaaabbcThenResulta3b2c() {
         String input = "aaabbc";
         String expected = "a3b2c";
         String result = SimpleStringEncoder.encode(input);
@@ -27,35 +30,39 @@ class SimpleStringEncoderTest {
     }
 
     @Test
-    void whenStringaaabccThenResulta3bc2(){
+    void whenStringaaabccThenResulta3bc2() {
         String input = "aaabcc";
         String expected = "a3bc2";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
-    void whenStringabcThenResulta3b3c3(){
+    void whenStringabcThenResulta3b3c3() {
         String input = "abc";
         String expected = "abc";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
-    void whenStringaaabbbcccThenResulta3b3c3(){
+    void whenStringaaabbbcccThenResulta3b3c3() {
         String input = "aaabbbccc";
         String expected = "a3b3c3";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
-    void whenStringaaaaaaaaaaaabbbcddddThenResulta3b3c3(){
+    void whenStringaaaaaaaaaaaabbbcddddThenResulta3b3c3() {
         String input = "aaaaaaaaaaaabbbcdddd";
         String expected = "a12b3cd4";
         String result = SimpleStringEncoder.encode(input);
         assertThat(result).isEqualTo(expected);
     }
+
     @Test
-    void whenStringaaabbbbaaabbcccdddddThenResulta3b3c3(){
+    void whenStringaaabbbbaaabbcccdddddThenResulta3b3c3() {
         String input = "aaabbbbaaabbcccddddd";
         String expected = "a3b4a3b2c3d5";
         String result = SimpleStringEncoder.encode(input);
